@@ -27,6 +27,10 @@ body * {
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+}
+
 header {
     position: fixed;
     top: 30px;
@@ -121,14 +125,14 @@ footer {
 
 #s1 p {
     font-size: 2em;
-    width: 600px;
+    max-width: 600px;
     text-align: center;
     line-height: 1.5em;
 }
 
 #s2 {
     background-color: #ED1745;
-    padding: 180px 100px;
+    padding: 15vh 10vw;
 }
 
 #s2 p,
@@ -206,7 +210,7 @@ footer {
     grid-template-columns: 2fr 1fr;
     column-gap: 40px;
     min-height: 90vh;
-    padding: 100px;
+    padding: 10vh 10vw;
 }
 
 #s7 img {
@@ -215,4 +219,19 @@ footer {
 
 footer {
     background-color: #86F8D4;
+}
+
+@media screen and (max-width: 800px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    header,
+    #s1,
+    #s4,
+    #s7,
+    footer {
+        grid-column: 1 / 2;
+    }
 }
