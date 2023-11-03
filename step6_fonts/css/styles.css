@@ -12,6 +12,12 @@
     font-display: block;
 }
 
+@font-face {
+    font-family: "Avenir Heavy";
+    src: url('fonts/avenir/avenir-heavy/ah.ttf') format('truetype');
+    font-display: block;
+}
+
 body {
     margin: 0;
     font-family: "Avenir Light", Arial, Helvetica, sans-serif;
@@ -122,14 +128,61 @@ footer {
 
 #s2 {
     background-color: #ED1745;
+    padding: 180px 100px;
+}
+
+#s2 p,
+#s2 h2 {
+    align-self: flex-start;
+}
+
+#s2 h2 {
+
+    color: white;
+    font-family: "Avenir Heavy";
+    font-size: 5em;
+    line-height: 0.8em;
+    font-weight: bold;
+    width: 400px;
+    margin-bottom: -30px;
+    margin-top: 0;
+    z-index: 500;
+}
+
+#s2 img {
+    width: 250px;
 }
 
 #s3 {
     background-color: white;
 }
 
+#s3 img {
+    max-width: 400px;
+}
+
 #s4 {
     background-color: #3C90DA;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-height: 90vh;
+}
+
+#s4 img {
+    display: block;
+    margin-left: auto;
+}
+
+#s4 h2 {
+    color: #ffc5c9;
+    font-family: "Avenir Heavy";
+    font-size: 5em;
+    line-height: 1em;
+    font-weight: bold;
+    margin: 0;
+    margin-left: -60px;
+    width: 300px;
+
 }
 
 #s5 {
