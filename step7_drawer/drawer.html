@@ -18,60 +18,9 @@
         <a href="https://github.com/tomaszbujnowicz/vanilla-js-drawer">GitHub repo</a>
     </h1>
 
-    <div>
-        <a href="#" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">Open Drawer from the right
-            side</a>
-    </div>
-
-    <!-- First Drawer -->
-    <section class="drawer" id="drawer-name" data-drawer-target>
-        <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
-        <div class="drawer__wrapper">
-            <div class="drawer__header">
-                <h2>
-                    About the Studio
-                </h2>
-                <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
-            </div>
-            <div class="drawer__content">
-                <section class="drawer-main">
-                    STUDIO BAGAZ' is a graphic design studio based in Tel Aviv, founded by Nati Shimony & Ronli Pe'er,
-                    focusing on experiential design, branding, digital and life style. We believe in great,
-                    uncompromising and limitless design, with a diverse portfolio of work and family of clients, in the
-                    arts, cultural, culinary, fashion, education and corporate sectors, brought together by a shared
-                    desire to make the world a better place through design
-                </section>
-                <section>
-                    <h3>What We Do:</h3>
-                    <ul>
-                        <li>Brand Development</li>
-                        <li>Visual Identity Strategy</li>
-                        <li>Art Direction</li>
-                        <li>Production</li>
-                        <li>Advertising Campaigns</li>
-                        <li>Motion Graphics</li>
-                        <li>UI UX</li>
-                        <li>Digital & Social</li>
-                    </ul>
-                    And All The Things That You Didn't Think Of.
-                </section>
-                <section>
-                    <h3>Other things</h3>
-                    <p>A second panel with all sorts of other cool stuff!</p>
-                </section>
-                <section>
-                    Facebook, Instagram
-                </section>
-                <section>
-                    Other stuff
-                </section>
-            </div>
-        </div>
-    </section>
-
-    <div>
-        <a href="#" data-drawer-trigger aria-controls="drawer-name-left" aria-expanded="false">Open Drawer from left
-            side</a>
+    <div class="controls">
+        <button data-drawer-trigger aria-controls="drawer-name-left" aria-expanded="false">Open from Left</button>
+        <button data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">Open from Right</button>
     </div>
 
     <!-- Second Drawer -->
@@ -119,6 +68,54 @@
             </div>
         </div>
     </section>
+
+    <!-- First Drawer -->
+    <section class="drawer" id="drawer-name" data-drawer-target>
+        <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
+        <div class="drawer__wrapper">
+            <div class="drawer__header">
+                <h2>
+                    About the Studio
+                </h2>
+                <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
+            </div>
+            <div class="drawer__content">
+                <section class="drawer-main">
+                    STUDIO BAGAZ' is a graphic design studio based in Tel Aviv, founded by Nati Shimony & Ronli Pe'er,
+                    focusing on experiential design, branding, digital and life style. We believe in great,
+                    uncompromising and limitless design, with a diverse portfolio of work and family of clients, in the
+                    arts, cultural, culinary, fashion, education and corporate sectors, brought together by a shared
+                    desire to make the world a better place through design
+                </section>
+                <section>
+                    <h3>What We Do:</h3>
+                    <ul>
+                        <li>Brand Development</li>
+                        <li>Visual Identity Strategy</li>
+                        <li>Art Direction</li>
+                        <li>Production</li>
+                        <li>Advertising Campaigns</li>
+                        <li>Motion Graphics</li>
+                        <li>UI UX</li>
+                        <li>Digital & Social</li>
+                    </ul>
+                    And All The Things That You Didn't Think Of.
+                </section>
+                <section>
+                    <h3>Other things</h3>
+                    <p>A second panel with all sorts of other cool stuff!</p>
+                </section>
+                <section>
+                    Facebook, Instagram
+                </section>
+                <section>
+                    Other stuff
+                </section>
+            </div>
+        </div>
+    </section>
+
+
 
 
 </body>
