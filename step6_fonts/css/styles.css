@@ -258,4 +258,21 @@ footer {
     footer {
         grid-column: 1 / 2;
     }
+
+    #s4,
+    #s7 {
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+
+    #s4 img {
+        margin-left: 0;
+    }
+
+    #s4 h2 {
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        margin-top: -50vw;
+    }
 }
