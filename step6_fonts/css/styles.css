@@ -89,8 +89,6 @@ header,
 section,
 footer {
     padding: 20px;
-
-    /* center-aligns the content inside the boxes */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,14 +145,14 @@ footer {
     font-size: 5em;
     line-height: 0.8em;
     font-weight: bold;
-    width: 400px;
+    width: 100%;
     margin-bottom: -30px;
     margin-top: 0;
     z-index: 500;
 }
 
 #s2 img {
-    width: 250px;
+    width: 60%;
 }
 
 #s3 {
@@ -162,7 +160,7 @@ footer {
 }
 
 #s3 img {
-    max-width: 400px;
+    max-width: 80%;
 }
 
 #s4 {
@@ -222,9 +220,35 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+
+    header {
+        top: 80px;
+    }
+
+    footer,
     .layout {
+        margin-right: 0;
+    }
+
+    .layout {
+        margin-top: 60px;
         display: grid;
         grid-template-columns: 1fr;
+    }
+
+    nav {
+        width: 100vw;
+        height: 60px;
+        flex-direction: row;
+        padding: 0px 20px;
+        align-items: center;
+        justify-content: center;
+        column-gap: 60px;
+    }
+
+    nav * {
+        font-size: 1.2em;
+        transform: none;
     }
 
     header,
