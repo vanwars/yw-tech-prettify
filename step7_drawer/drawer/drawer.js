@@ -1,7 +1,9 @@
 class Drawer {
-    constructor(id, title) {
+    constructor(id, title, direction = "left") {
+        this.open = false;
         this.id = id;
         this.title = title;
+        this.direction = direction;
         this.elem = document.getElementById(this.id);
         this.drawerEl = this.getDrawerElement();
 
@@ -22,7 +24,9 @@ class Drawer {
     }
     getDrawerElement() {
         const section = document.createElement("section");
-        section.className = "drawer drawer--left";
+        section.className = `drawer ${
+            this.direction === "left" ? "drawer--left" : ""
+        }`;
         section.innerHTML = `
             <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
             <div class="drawer__wrapper">
@@ -45,25 +49,15 @@ class Drawer {
     }
 
     clickHandler(event) {
-        // Find elements
-        var toggle = event.target,
-            open = toggle.closest(this.settings.selectorTrigger),
-            close = toggle.closest(this.settings.selectorClose);
-
-        // Open drawer when the open button is clicked
-        if (open) {
+        console.log("clickEvent", event);
+        if (!this.open) {
             this.openDrawer(open);
-        }
-
-        // Close drawer when the close button (or overlay area) is clicked
-        if (close) {
+            this.open = !this.open;
+        } else {
             this.closeDrawer(close);
+            this.open = !this.open;
         }
-
-        // Prevent default link behavior
-        if (open || close) {
-            event.preventDefault();
-        }
+        event.preventDefault();
     }
     openDrawer() {
         this.drawerEl.classList.add(this.settings.activeClass);
@@ -77,6 +71,7 @@ class Drawer {
         // Make it visible
         setTimeout(
             function () {
+                console.log(this.settings.visibleClass);
                 this.drawerEl.classList.add(this.settings.visibleClass);
                 this.trapFocus(this.drawerEl);
             }.bind(this),
@@ -85,6 +80,7 @@ class Drawer {
     }
 
     closeDrawer() {
+        console.log("close drawer");
         this.drawerEl.classList.remove(this.settings.visibleClass);
         document.documentElement.style.overflow = "";
 
@@ -152,7 +148,14 @@ class Drawer {
     }
 
     attachEventHandlers() {
-        document.addEventListener("click", this.clickHandler.bind(this), false);
+        const overlay = this.drawerEl.querySelector(".drawer__overlay");
+        const closeButton = this.drawerEl.querySelector(".drawer__close");
+        overlay.addEventListener("click", this.clickHandler.bind(this), false);
+        closeButton.addEventListener(
+            "click",
+            this.clickHandler.bind(this),
+            false
+        );
         document.addEventListener(
             "keydown",
             this.keydownHandler.bind(this),
@@ -160,4 +163,11 @@ class Drawer {
         );
     }
 }
-const d = new Drawer("d1", "My first thingy");
+const buttons = document.querySelectorAll("*[data-drawer-trigger");
+buttons.forEach((btn) => {
+    const targetId = btn.getAttribute("data-drawer-id");
+    const modalTitle = btn.getAttribute("data-title");
+    const direction = btn.getAttribute("data-direction");
+    const d = new Drawer(targetId, modalTitle, direction);
+    btn.addEventListener("click", d.clickHandler.bind(d), false);
+});
