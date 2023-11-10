@@ -1,7 +1,7 @@
 .smartphone {
     position: relative;
     width: 382px;
-    height: 560px;
+    height: 610px;
     margin: auto;
     border: 16px black solid;
     border-top-width: 60px;
@@ -12,7 +12,7 @@
 /* The screen (or content) of the device */
 .smartphone .content {
     width: 350px;
-    height: 440px;
+    height: 490px;
     background: white;
 }
 
